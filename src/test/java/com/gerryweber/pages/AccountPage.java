@@ -32,15 +32,11 @@ public class AccountPage extends BasePage{
 
     @FindBy(css = "#title") public WebElement adresBasligi_Loc;
 
-    @FindBy(css = "#countryId") public WebElement ulke_Loc;
-
     @FindBy(css = "#cityId") public WebElement sehir_Loc;
 
     @FindBy(css = "#countyId") public WebElement ilce_Loc;
 
     @FindBy(xpath = "//*[contains(@class, 'MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root')]") public List<WebElement> dataList_Loc;
-
-    @FindBy(xpath = "//*[contains(@class, 'MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root')]") public WebElement ulke_Loc2;
 
     @FindBy(css = "#zipPostalCode") public WebElement postaKodu_Loc;
 
@@ -51,8 +47,6 @@ public class AccountPage extends BasePage{
     @FindBy(xpath = "//*[contains(@class, 'MuiAccordionSummary-expandIconWrapper')]") public WebElement arrowBtn_Loc;
 
     @FindBy(xpath = "(//*[text()='Şifremi Sıfırla'])[2]") public WebElement sifremiSifirla_Loc;
-
-    @FindBy(xpath = "//*[contains(@class, 'ins-side-menu-arrow ins')]") public WebElement popUpArrow_Loc;
 
     @FindBy(xpath = "//*[text()='Çıkış']") public WebElement cikisYap_Loc;
 
@@ -90,16 +84,6 @@ public class AccountPage extends BasePage{
         BrowserUtils.waitFor(2);
     }
 
-    public void verifyChangePassword(String expMsg){
-        String actMsg = sifreMsg_Loc.getText();
-        assertEquals(expMsg,actMsg);
-    }
-
-    public void verifyAdressMsg(String expMsg){
-        String actMsg = adresMsg_Loc.getText();
-        assertEquals(expMsg,actMsg);
-    }
-
     public void enterAdress(){
         BrowserUtils.scrollDown();
         BrowserUtils.waitFor(1);
@@ -121,7 +105,7 @@ public class AccountPage extends BasePage{
         List<WebElement> allCity = dataList_Loc;
 
         for (int i = 1; i <= allCity.size(); i++) {
-            if (allCity.get(i).getText().contains("İstanbul")){
+            if (allCity.get(i).getText().contains("Ankara")){
                 allCity.get(i).click();
                 break;
             }
@@ -135,7 +119,7 @@ public class AccountPage extends BasePage{
         List<WebElement> allCounty= dataList_Loc;
 
         for (int i = 1; i <= allCounty.size(); i++) {
-            if (allCounty.get(i).getText().contains("BESIKTAS")){
+            if (allCounty.get(i).getText().contains("EVREN")){
                 allCounty.get(i).click();
                 break;
             }
@@ -166,7 +150,7 @@ public class AccountPage extends BasePage{
         List<WebElement> allCity = dataList_Loc;
 
         for (int i = 1; i <= allCity.size(); i++) {
-            if (allCity.get(i).getText().contains("İstanbul")){
+            if (allCity.get(i).getText().contains("Ankara")){
                 allCity.get(i).click();
                 break;
             }
@@ -180,7 +164,7 @@ public class AccountPage extends BasePage{
         List<WebElement> allCounty= dataList_Loc;
 
         for (int i = 1; i <= allCounty.size(); i++) {
-            if (allCounty.get(i).getText().contains("BESIKTAS")){
+            if (allCounty.get(i).getText().contains("EVREN")){
                 allCounty.get(i).click();
                 break;
             }

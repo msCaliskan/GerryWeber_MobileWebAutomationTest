@@ -22,9 +22,7 @@ public class CheckoutPage extends BasePage{
 
     @FindBy(xpath = "//*[@id='cvc']") public WebElement cvc_Loc;
 
-    @FindBy(xpath = "//*[@id='isConsentTextConfirmed']") public WebElement mesafeliSatis_Loc;
-
-    @FindBy(xpath = "//*[@id='isDataPolicyConfirmed']") public WebElement onBilgilendirme_Loc;
+    @FindBy(xpath = "//*[@id='isPolicyConfirmed']") public WebElement mesafeliSatis_Loc;
 
     @FindBy(xpath = "(//*[@class='MuiBox-root muirtl-k008qs'])[3]") public WebElement sepetimBtn_Loc;
 
@@ -32,7 +30,7 @@ public class CheckoutPage extends BasePage{
 
     public void invalidCard(){
         kartNo_Loc.sendKeys("4444444444444444");
-        adSoyad_Loc.sendKeys("Musa Çalışkan");
+        adSoyad_Loc.sendKeys("Musa Caliskan");
 
         BrowserUtils.waitFor(1);
 
@@ -63,7 +61,6 @@ public class CheckoutPage extends BasePage{
         BrowserUtils.waitFor(2);
     }
     public void checkBox(){
-        onBilgilendirme_Loc.click();
         mesafeliSatis_Loc.click();
         BrowserUtils.waitFor(1);
     }

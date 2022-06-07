@@ -11,4 +11,4 @@ Feature:Mobile | Forget Password - The user tries to send forget password email
     And The user verifies "Bu alan zorunludur." message
     And The user enters forget password email address
     And The user clicks "Şifremi Sıfırla" button
-    Then The user verifies "Şifrenizi yenilemek için gerekli link email adresinize yollanmıştır. Lütfen emailinizi kontrol ediniz." message
+    Then The user verifies "Şifrenizi yenilemek için gerekli link e-mail adresinize yollanmıştır. Mevcut hesabınız var ise lütfen e-mailinizi kontrol ediniz." message

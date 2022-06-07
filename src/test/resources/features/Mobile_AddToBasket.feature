@@ -22,7 +22,7 @@ Feature: Mobile | Add to basket
   And The user clicks "Adresi Kaydet" button
   When The user clicks "Sonraki Adım" button
   And The user enters invalid informations
-  And The user selects Ön Bilgilendirme and Mesafeli Satış Sözleşmesi buttons
+  And The user selects On Bilgilendirme and Mesafeli Satis Sozlesmesi buttons
   And The user clicks "Siparişi Tamamla" button
   And The user verifies "Kart numarası geçersizdir" message
   Then The user clicks Back button

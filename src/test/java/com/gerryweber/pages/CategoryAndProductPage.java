@@ -3,6 +3,7 @@ package com.gerryweber.pages;
 import com.gerryweber.utilities.BrowserUtils;
 import com.gerryweber.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -23,6 +24,10 @@ public class CategoryAndProductPage extends BasePage {
     @FindBy(xpath = "//*[text()='Favorilere Ekle']") public WebElement favoriBtn_Loc;
 
     @FindBy(xpath = "//*[text()='SEPETE EKLE']") public WebElement sepeteEkleBtn_Loc;
+
+    @FindBy(xpath = "//*[@name='price']") public WebElement priceHolder_Loc;
+
+    @FindBy(xpath = "//*[text()='Fiyatı Düşünce Haber Ver']") public WebElement fiyatDHVBtn_Loc;
 
     public void clickProductRandom(){
 
@@ -77,6 +82,25 @@ public class CategoryAndProductPage extends BasePage {
         BrowserUtils.clickWithJS(sepeteEkleBtn_Loc);
         BrowserUtils.waitFor(2);
 
+    }
+    public void validPrice(){
+        String price = priceHolder_Loc.getAttribute("value");
+
+        int b = Integer.parseInt(price);
+        int c= b-5;
+
+        priceHolder_Loc.sendKeys(Keys.CONTROL+"a");
+        priceHolder_Loc.sendKeys(Keys.DELETE);
+        BrowserUtils.waitFor(1);
+        priceHolder_Loc.sendKeys(Integer.toString(c));
+        BrowserUtils.waitFor(2);
+
+    }
+    public void clickFiyatButton(){
+        BrowserUtils.waitForClickablility(fiyatDHVBtn_Loc,5);
+        BrowserUtils.waitFor(1);
+        BrowserUtils.clickWithJS(fiyatDHVBtn_Loc);
+        BrowserUtils.waitFor(2);
     }
 
 }
