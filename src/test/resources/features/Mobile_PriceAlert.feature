@@ -1,4 +1,4 @@
-Feature: Desktop | Price Alert
+Feature: Mobile | Price Alert
   @smoke
   Scenario: The user can select to PriceAlert and delete
 
