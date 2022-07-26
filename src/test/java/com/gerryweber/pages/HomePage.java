@@ -28,7 +28,7 @@ public class HomePage extends BasePage{
 
     public void gotoHomePage(){
         Driver.get().get(ConfigurationReader.get("url"));
-        BrowserUtils.waitFor(3);
+        BrowserUtils.waitFor(5);
 
         JavascriptExecutor jse = (JavascriptExecutor) Driver.get();
         WebElement accept = (WebElement) jse.executeScript("return document.querySelector('#usercentrics-root').shadowRoot.querySelector('#focus-lock-id > div.sc-crHmcD.bcJkjM > div > div.sc-gWXbKe.fSIThp > div > div > div.sc-cxpSdN.drbILQ > div > div > button:nth-child(3)')");
@@ -48,7 +48,7 @@ public class HomePage extends BasePage{
     }
 
     public static void checkHomePage(){
-        String expectedUrl ="https://www.gerryweber.com.tr/";
+        String expectedUrl ="https://www.gerryweber.com.tr/tr-TR";
         String actualUrl = Driver.get().getCurrentUrl();
         Assert.assertEquals(expectedUrl,actualUrl);
     }

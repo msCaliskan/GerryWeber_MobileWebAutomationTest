@@ -11,7 +11,7 @@ Feature: Mobile | Add new address and delete
     Then The user clicks login button
     And The user clicks arrow button
     And The user clicks "Adreslerim" button
-    And The user verifies redirected to "/account/addresses" page
+    And The user verifies redirected to "/tr-TR/account/addresses" page
     And The user verifies "Kayıtlı adresiniz bulunmamaktadır." message
     When The user clicks "Yeni Adres Ekle" button
     And The user enters valid informations
@@ -20,4 +20,4 @@ Feature: Mobile | Add new address and delete
     And The user verifies "Kayıtlı adresiniz bulunmamaktadır." message
     Then The user clicks arrow button
     And The user clicks "Çıkış Yap" button
-    And The user verifies redirected to "/tr-TR" page
+    And The user verifies redirected to "/tr-TR?logout=true" page

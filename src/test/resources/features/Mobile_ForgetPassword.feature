@@ -6,7 +6,7 @@ Feature:Mobile | Forget Password - The user tries to send forget password email
     And The user verifies redirected to homepage
     And The user clicks login button
     And The user clicks "Şifremi unuttum" button
-    And The user verifies redirected to "/auth/forgot-password" page
+    And The user verifies redirected to "/tr-TR/auth/forgot-password" page
     Then The user clicks "Şifremi Sıfırla" button
     And The user verifies "Bu alan zorunludur." message
     And The user enters forget password email address

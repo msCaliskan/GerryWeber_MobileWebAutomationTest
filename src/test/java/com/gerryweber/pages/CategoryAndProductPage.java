@@ -89,6 +89,7 @@ public class CategoryAndProductPage extends BasePage {
         int b = Integer.parseInt(price);
         int c= b-5;
 
+        BrowserUtils.waitFor(2);
         priceHolder_Loc.sendKeys(Keys.CONTROL+"a");
         priceHolder_Loc.sendKeys(Keys.DELETE);
         BrowserUtils.waitFor(1);
