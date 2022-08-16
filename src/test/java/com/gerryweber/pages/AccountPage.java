@@ -26,17 +26,13 @@ public class AccountPage extends BasePage{
 
     @FindBy(css = "#confirmNewPassword") public WebElement sifreTekrari_Loc;
 
-    @FindBy(xpath = "//p[text()='Şifrenizi başarıyla değiştirdiniz']") public WebElement sifreMsg_Loc;
-
-    @FindBy(xpath = "//p[text()='Teslimat adresi bulunmamaktadır.']") public WebElement adresMsg_Loc;
-
     @FindBy(css = "#title") public WebElement adresBasligi_Loc;
 
     @FindBy(css = "#cityId") public WebElement sehir_Loc;
 
     @FindBy(css = "#countyId") public WebElement ilce_Loc;
 
-    @FindBy(xpath = "//*[contains(@class, 'MuiMenuItem-root MuiMenuItem-gutters MuiButtonBase-root')]") public List<WebElement> dataList_Loc;
+    @FindBy(xpath = "//*[contains(@class, 'MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters')]") public List<WebElement> dataList_Loc;
 
     @FindBy(css = "#zipPostalCode") public WebElement postaKodu_Loc;
 

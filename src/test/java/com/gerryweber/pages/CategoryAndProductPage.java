@@ -15,9 +15,9 @@ public class CategoryAndProductPage extends BasePage {
 
     @FindBy(xpath = "//*[contains(@class,'MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-4 MuiGrid-grid-md-4')]") public List<WebElement> prodList_Loc;
 
-    @FindBy(xpath = "//button[contains(@class, 'MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-disableElevation MuiButton-fullWidth MuiButtonBase-root has-stock')]") public List<WebElement> sizeList_Loc;
+    @FindBy(xpath = "//button[contains(@class, 'MuiButton-disableElevation MuiButton-fullWidth has-stock')]") public List<WebElement> sizeList_Loc;
 
-    @FindBy(xpath = "//*[@class='MuiTypography-root jss140 MuiTypography-body1']") public List<WebElement> productName_Loc;
+    @FindBy(xpath = "//*[contains(@id, 'productName')]") public List<WebElement> productName_Loc;
 
     @FindBy(xpath = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium muirtl-1x0t2pd'])[2]") public WebElement uyari_Loc;
 
@@ -71,14 +71,10 @@ public class CategoryAndProductPage extends BasePage {
     public void selectSize(){
 
         Random rn = new Random();
-        int a = rn.nextInt(sizeList_Loc.size())+1;
-        String loc = "(//button[contains(@class, 'MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-disableElevation MuiButton-fullWidth MuiButtonBase-root has-stock')])["+a+"]";
+        int a = rn.nextInt(sizeList_Loc.size());
 
-        WebElement randomSize = Driver.get().findElement(By.xpath(loc));
-
-        BrowserUtils.waitFor(1);
-        randomSize.click();
-        BrowserUtils.waitFor(1);
+        sizeList_Loc.get(a).click();
+        BrowserUtils.waitFor(2);
         BrowserUtils.clickWithJS(sepeteEkleBtn_Loc);
         BrowserUtils.waitFor(2);
 

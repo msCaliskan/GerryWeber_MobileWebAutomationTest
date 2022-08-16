@@ -26,4 +26,4 @@ Feature: Mobile | Guest add to basket
     Then The user clicks Back button
     And The user clicks "Sepete Git" button
     And The user clicks Sil button
-    And The user verifies "Alışveriş sepetiniz boş!" message
+#    And The user verifies "Alışveriş sepetiniz boş!" message
