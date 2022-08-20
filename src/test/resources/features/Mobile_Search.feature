@@ -1,7 +1,7 @@
-Feature: Mobile | Search User searchs for a product
+Feature: Mobile | Search User searches for a product
 
   @smoke
-  Scenario: User searchs for a product
+  Scenario: User searches for a product
 
     And The user visits GerryWeber homepage
     And The user verifies redirected to homepage

@@ -12,8 +12,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage{
 
-    @FindBy(xpath = "(//*[contains(@class,'MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium')])[2]") public WebElement close_Loc;
-
     @FindBy(xpath = "(//*[@class='MuiBox-root muirtl-k008qs'])[2]") public WebElement loginBtn_Loc;
 
     @FindBy(css = "#email") public WebElement email_Loc;
@@ -35,7 +33,6 @@ public class HomePage extends BasePage{
 
         BrowserUtils.clickWithJS(accept);
         BrowserUtils.waitFor(1);
-        close_Loc.click();
     }
 
     public void mobilLogin(){
