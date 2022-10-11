@@ -24,8 +24,6 @@ public class CheckoutPage extends BasePage{
 
     @FindBy(xpath = "//*[@id='isPolicyConfirmed']") public WebElement mesafeliSatis_Loc;
 
-    @FindBy(xpath = "(//*[@class='MuiBox-root muirtl-k008qs'])[3]") public WebElement sepetimBtn_Loc;
-
     @FindBy(xpath = "//button[contains (@class, 'basket-delete-button')]") public WebElement deleteBtn_Loc;
 
     public void invalidCard(){
@@ -68,14 +66,11 @@ public class CheckoutPage extends BasePage{
     public void delete(){
         BrowserUtils.waitForClickablility(deleteBtn_Loc,5);
         BrowserUtils.clickWithJS(deleteBtn_Loc);
-        BrowserUtils.waitFor(1);
+        BrowserUtils.waitFor(2);
     }
 
     public void backToBasket(){
         Driver.get().navigate().back();
-        BrowserUtils.waitForClickablility(sepetimBtn_Loc,5);
-        sepetimBtn_Loc.click();
-
     }
 
 }
