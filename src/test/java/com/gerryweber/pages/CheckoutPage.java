@@ -26,6 +26,8 @@ public class CheckoutPage extends BasePage{
 
     @FindBy(xpath = "//button[contains (@class, 'basket-delete-button')]") public WebElement deleteBtn_Loc;
 
+    @FindBy(xpath = "(//button[contains(@class, 'MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall')])[2]") public WebElement basketButton_Loc;
+
     public void invalidCard(){
         kartNo_Loc.sendKeys("4444444444444444");
         adSoyad_Loc.sendKeys("Test Test");
@@ -73,4 +75,9 @@ public class CheckoutPage extends BasePage{
         Driver.get().navigate().back();
     }
 
+    public void clickBasketButton(){
+        BrowserUtils.waitForClickablility(basketButton_Loc,5);
+        basketButton_Loc.click();
+        BrowserUtils.waitFor(1);
+    }
 }

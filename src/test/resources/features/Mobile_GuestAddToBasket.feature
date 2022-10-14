@@ -24,6 +24,6 @@ Feature: Mobile | Guest add to basket
     And The user clicks "Siparişi Tamamla" button
     And The user verifies "Kart numarası geçersizdir" message
     Then The user clicks Back button
+    Then The user clicks basket button
     And The user clicks "Sepete Git" button
     And The user clicks Sil button
-#    And The user verifies "Alışveriş sepetiniz boş!" message
