@@ -12,7 +12,7 @@ Feature: Mobile | Login with valid and invalid credentials
     And The user clicks "Giriş Yap" buttonn
     And The user clicks login button
     And The user verifies redirected to "/tr-TR/account/info" page
-    And The user checks "Musa", "Caliskan", "musainveon@gmail.com" and "0507 500 29 20" informations
+    And The user checks "Musa", "Caliskan", "musainveonn@gmail.com" and "0507 500 29 20" informations
     Then The user clicks arrow button
     And The user clicks "Çıkış Yap" button
     And The user verifies redirected to "/tr-TR?logout=true" page
