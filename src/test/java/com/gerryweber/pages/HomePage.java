@@ -9,6 +9,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class HomePage extends BasePage{
 
@@ -16,13 +19,15 @@ public class HomePage extends BasePage{
 
     @FindBy(css = "#email") public WebElement email_Loc;
 
-    @FindBy(css = "#password") public WebElement password_Loc;
-
     @FindBy(xpath = "(//*[@class='MuiBox-root muirtl-k008qs'])[1]") public WebElement hamburgerMenuBtn_Loc;
 
     @FindBy(css = "#mui-1") public WebElement searchBox_Loc;
 
     @FindBy(xpath = "//*[@class='MuiSvgIcon-root jss125']") public WebElement findBtn_Loc;
+
+    @FindBy(xpath = "//*[@class='MuiBadge-root BaseBadge-root muirtl-14sscde']//*[contains(@class, 'MuiTypography-root MuiTypography-body3')]") public List<WebElement> categoriesList_Loc;
+
+    @FindBy(xpath = "//*[@class='MuiTypography-root MuiTypography-h3 muirtl-14hb52n']") public List<WebElement> footerMenuNames_Loc;
 
     public void gotoHomePage(){
         Driver.get().get(ConfigurationReader.get("url"));
@@ -33,15 +38,6 @@ public class HomePage extends BasePage{
 
         BrowserUtils.clickWithJS(accept);
         BrowserUtils.waitFor(1);
-    }
-
-    public void mobilLogin(){
-        String email = ConfigurationReader.get("user_email");
-        String password = ConfigurationReader.get("user_password");
-
-        email_Loc.sendKeys(email);
-        BrowserUtils.waitFor(1);
-        password_Loc.sendKeys(password);
     }
 
     public static void checkHomePage(){
@@ -55,19 +51,32 @@ public class HomePage extends BasePage{
         BrowserUtils.waitFor(1);
     }
 
+    public void clickHamburgerMenu(){
+        BrowserUtils.waitForClickablility(hamburgerMenuBtn_Loc,5);
+        hamburgerMenuBtn_Loc.click();
+        BrowserUtils.waitFor(1);
+    }
+
     public void searchBox(String string){
         searchBox_Loc.sendKeys(string+Keys.ENTER);
         BrowserUtils.waitFor(1);
     }
 
-    public void invalidEmailMobile(){
-        email_Loc.sendKeys(ConfigurationReader.get("guest_email"));
-        password_Loc.sendKeys(ConfigurationReader.get("user_password"));
-    }
-    public void invalidPasswordMobile(){
-        email_Loc.sendKeys(ConfigurationReader.get("user_email"));
-        password_Loc.sendKeys("Inveon34...");
+    List<String> allCategories = new ArrayList<>();
+    public void checkCategories(List<String> categoriesList){
+
+        for (WebElement element : categoriesList_Loc) {
+            allCategories.add(element.getText());
+        }
+        Assert.assertTrue(allCategories.containsAll(categoriesList));
     }
 
+    List<String> allNames = new ArrayList<>();
+    public void checkFooterNames(List<String> headerNames){
 
+        for (WebElement element : footerMenuNames_Loc) {
+            allNames.add(element.getText());
+        }
+        Assert.assertTrue(allNames.containsAll(headerNames));
+    }
 }

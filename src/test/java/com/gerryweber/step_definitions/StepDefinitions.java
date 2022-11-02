@@ -7,12 +7,17 @@ import com.gerryweber.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 
+import java.util.List;
+
 public class StepDefinitions {
 
     AccountPage accountPage = new AccountPage();
+    AddressPage addressPage = new AddressPage();
     CategoryAndProductPage categoryAndProductPage = new CategoryAndProductPage();
+    ChangePasswordPage changePasswordPage = new ChangePasswordPage();
     CheckoutPage checkoutPage = new CheckoutPage();
     HomePage homePage = new HomePage();
+    LoginPage loginPage = new LoginPage();
     
     @Given("The user visits GerryWeber homepage")
     public void the_user_visits_GerryWeber_homepage() {
@@ -31,19 +36,17 @@ public class StepDefinitions {
 
     @And("The user enters invalid email for mobile")
     public void theUserEntersInvalidEmailForMobile() {
-        homePage.invalidEmailMobile();
+        loginPage.invalidEmailMobile();
     }
 
     @And("The user enters invalid password for mobile")
     public void theUserEntersInvalidPasswordForMobile() {
-        homePage.invalidPasswordMobile();
+        loginPage.invalidPasswordMobile();
     }
 
     @Given("The user clicks hamburger menu button")
     public void the_user_clicks_hamburger_menu_button() {
-        BrowserUtils.waitFor(2);
-        homePage.hamburgerMenuBtn_Loc.click();
-        BrowserUtils.waitFor(1);
+        homePage.clickHamburgerMenu();
     }
 
     @When("The user verifies redirected to {string} page")
@@ -73,21 +76,21 @@ public class StepDefinitions {
 
     @When("The user enters old, new and confirm new password")
     public void the_user_enters_old_new_and_confirm_new_password() {
-        accountPage.changePassword();
+        changePasswordPage.changePassword();
     }
 
     @When("The user enters valid informations")
     public void the_user_enters_valid_informations() {
-        accountPage.enterAdress();
+        addressPage.enterAdress();
     }
 
     @When("The user enters valid informations for guest")
     public void theUserEntersValidInformationsForGuest() {
-        accountPage.enterGuestAdress();
+        checkoutPage.enterGuestAdress();
     }
 
-    @When("The user clicks anyone product")
-    public void the_user_clicks_anyone_product() {
+    @When("The user clicks any product")
+    public void the_user_clicks_any_product() {
         categoryAndProductPage.clickProductRandom();
     }
 
@@ -99,11 +102,6 @@ public class StepDefinitions {
     @When("The user enters invalid informations")
     public void the_user_enters_invalid_informations() {
         checkoutPage.invalidCard();
-    }
-
-    @When("The user selects 3D Secure, Ön Bilgilendirme and Mesafeli Satış Sözleşmesi buttons")
-    public void the_user_selects_3D_Secure_Ön_Bilgilendirme_and_Mesafeli_Satış_Sözleşmesi_buttons() {
-        checkoutPage.checkBox();
     }
 
     @Then("The user clicks Back button")
@@ -126,10 +124,10 @@ public class StepDefinitions {
         categoryAndProductPage.searchResult(string);
     }
 
-    @And("The user enters valid credentials for mobile")
-    public void theUserEntersValidCredentialsForMobile() {
-        homePage.mobilLogin();
-        BrowserUtils.waitFor(1);
+    @And("The user enters valid credentials")
+    public void theUserEntersValidCredentials() {
+        loginPage.mobilLogin();
+
     }
 
     @When("The user selects On Bilgilendirme and Mesafeli Satis Sozlesmesi buttons")
@@ -167,8 +165,8 @@ public class StepDefinitions {
         categoryAndProductPage.closePopUps();
     }
 
-    @And("The user chooses color and size")
-    public void theUserChoosesColorAndSize() {
+    @And("The user chooses size")
+    public void theUserChoosesSize() {
         categoryAndProductPage.selectSize();
     }
 
@@ -179,12 +177,12 @@ public class StepDefinitions {
 
     @And("The user enters wrong old password")
     public void theUserEntersWrongOldPassword() {
-        accountPage.wrongOldPassword();
+        changePasswordPage.wrongOldPassword();
     }
 
     @And("The user enters different passwords")
     public void theUserEntersDifferentPasswords() {
-        accountPage.differentPassword();
+        changePasswordPage.differentPassword();
     }
 
     @And("The user clicks Favorilere Ekle button")
@@ -205,5 +203,15 @@ public class StepDefinitions {
     @Then("The user clicks basket button")
     public void theUserClicksBasketButton() {
         checkoutPage.clickBasketButton();
+    }
+
+    @And("The user verifies categories")
+    public void theUserVerifiesCategories(List<String> categorieList) {
+        homePage.checkCategories(categorieList);
+    }
+
+    @And("The user verifies footer menu names")
+    public void theUserVerifiesFooterMenuNames(List<String> footerMenuNames) {
+        homePage.checkFooterNames(footerMenuNames);
     }
 }

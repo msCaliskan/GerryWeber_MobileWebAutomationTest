@@ -6,14 +6,14 @@ Feature: Mobile | Add to basket
   Given The user visits GerryWeber homepage
   And The user verifies redirected to homepage
   And The user clicks login button
-  And The user enters valid credentials for mobile
+  And The user enters valid credentials
   And The user clicks "Giriş Yap" buttonn
   And The user clicks hamburger menu button
   And The user navigates to "GİYİM" category
   Then The user verifies redirected to "/tr-TR/giyim" page
-  And The user clicks anyone product
+  And The user clicks any product
   Then The user clicks "Beden Seçiniz" button
-  And The user chooses color and size
+  And The user chooses size
   And The user clicks "Sepete Git" button
   And The user verifies redirected to "/tr-TR/basket" page
   When The user clicks "Sepeti Onayla" button

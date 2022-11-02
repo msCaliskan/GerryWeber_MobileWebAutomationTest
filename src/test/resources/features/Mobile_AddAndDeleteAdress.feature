@@ -6,7 +6,7 @@ Feature: Mobile | Add new address and delete
     Given The user visits GerryWeber homepage
     And The user verifies redirected to homepage
     And The user clicks login button
-    And The user enters valid credentials for mobile
+    And The user enters valid credentials
     And The user clicks "Giriş Yap" buttonn
     Then The user clicks login button
     And The user clicks arrow button
