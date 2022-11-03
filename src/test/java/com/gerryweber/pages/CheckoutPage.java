@@ -3,7 +3,6 @@ package com.gerryweber.pages;
 import com.gerryweber.utilities.BrowserUtils;
 import com.gerryweber.utilities.ConfigurationReader;
 import com.gerryweber.utilities.Driver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

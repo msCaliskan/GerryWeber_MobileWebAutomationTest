@@ -3,7 +3,6 @@ package com.gerryweber.step_definitions;
 import com.gerryweber.pages.*;
 import com.gerryweber.utilities.BrowserUtils;
 import com.gerryweber.utilities.ConfigurationReader;
-import com.gerryweber.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 
@@ -127,7 +126,6 @@ public class StepDefinitions {
     @And("The user enters valid credentials")
     public void theUserEntersValidCredentials() {
         loginPage.mobilLogin();
-
     }
 
     @When("The user selects On Bilgilendirme and Mesafeli Satis Sozlesmesi buttons")
@@ -135,29 +133,9 @@ public class StepDefinitions {
         checkoutPage.checkBox();
     }
 
-    @And("The user clicks find button")
-    public void theUserClicksFindButton() {
-        homePage.findBtn_Loc.click();
-    }
-
-    @Then("The user clicks Şifremi Sıfırla button")
-    public void theUserClicksŞifremiSıfırlaButton() {
-        accountPage.sifremiSifirla_Loc.click();
-    }
-
-    @And("The user clicks Çıkış button")
-    public void theUserClicksÇıkışButton() {
-        BrowserUtils.clickWithJS(accountPage.cikisYap_Loc);
-    }
-
     @And("The user navigates to {string} category")
     public void theUserNavigatesToCategory(String category) {
         CategoryAndProductPage.navigateMobile(category);
-    }
-
-    @Then("The user scroll down to page")
-    public void theUserScrollDownToPage() {
-        BrowserUtils.scrollDown();
     }
 
     @And("The user closes popUps")

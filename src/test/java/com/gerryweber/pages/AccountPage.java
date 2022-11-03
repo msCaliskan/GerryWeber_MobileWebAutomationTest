@@ -1,12 +1,7 @@
 package com.gerryweber.pages;
 
-
-import com.gerryweber.utilities.BrowserUtils;
-import com.gerryweber.utilities.ConfigurationReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,10 +16,6 @@ public class AccountPage extends BasePage{
     @FindBy(css = "#phone") public WebElement telefon_Loc;
 
     @FindBy(xpath = "//*[contains(@class, 'MuiAccordionSummary-expandIconWrapper')]") public WebElement arrowBtn_Loc;
-
-    @FindBy(xpath = "(//*[text()='Şifremi Sıfırla'])[2]") public WebElement sifremiSifirla_Loc;
-
-    @FindBy(xpath = "//*[text()='Çıkış']") public WebElement cikisYap_Loc;
 
     public void getInformation(String name, String lastname, String email, String phone){
         String actName = ad_Loc.getAttribute("value");

@@ -17,12 +17,6 @@ public class AddressPage extends BasePage{
 
     @FindBy(css = "#phone") public WebElement telefon_Loc;
 
-    @FindBy(css = "#oldPassword") public WebElement gecerliSifre_Loc;
-
-    @FindBy(css = "#newPassword") public WebElement yeniSifre_Loc;
-
-    @FindBy(css = "#confirmNewPassword") public WebElement sifreTekrari_Loc;
-
     @FindBy(css = "#title") public WebElement adresBasligi_Loc;
 
     @FindBy(css = "#cityId") public WebElement sehir_Loc;
