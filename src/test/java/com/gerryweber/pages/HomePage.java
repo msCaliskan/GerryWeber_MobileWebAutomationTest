@@ -23,9 +23,7 @@ public class HomePage extends BasePage{
 
     @FindBy(css = "#mui-1") public WebElement searchBox_Loc;
 
-    @FindBy(xpath = "//*[@class='MuiSvgIcon-root jss125']") public WebElement findBtn_Loc;
-
-    @FindBy(xpath = "//*[@class='MuiBadge-root BaseBadge-root muirtl-14sscde']//*[contains(@class, 'MuiTypography-root MuiTypography-body3')]") public List<WebElement> categoriesList_Loc;
+    @FindBy(xpath = "//*[@class='MuiBadge-root MuiBadge-root muirtl-14sscde']//*[contains(@class, 'MuiTypography-root MuiTypography-body3')]") public List<WebElement> categoriesList_Loc;
 
     @FindBy(xpath = "//*[@class='MuiTypography-root MuiTypography-h3 muirtl-14hb52n']") public List<WebElement> footerMenuNames_Loc;
 
@@ -69,6 +67,7 @@ public class HomePage extends BasePage{
         for (WebElement element : categoriesList_Loc) {
             allCategories.add(element.getText());
         }
+
         Assert.assertTrue(allCategories.containsAll(categoriesList));
     }
 
