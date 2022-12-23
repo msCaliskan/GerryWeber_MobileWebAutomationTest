@@ -23,7 +23,7 @@ public class HomePage extends BasePage{
 
     @FindBy(css = "#mui-1") public WebElement searchBox_Loc;
 
-    @FindBy(xpath = "//*[@class='MuiBadge-root MuiBadge-root muirtl-14sscde']//*[contains(@class, 'MuiTypography-root MuiTypography-body3')]") public List<WebElement> categoriesList_Loc;
+    @FindBy(xpath = "//*[contains(@class, 'MuiBadge-root')]//*[contains(@class, 'MuiTypography-root MuiTypography-body3')]") public List<WebElement> categoriesList_Loc;
 
     @FindBy(xpath = "//*[@class='MuiTypography-root MuiTypography-h3 muirtl-14hb52n']") public List<WebElement> footerMenuNames_Loc;
 
