@@ -23,7 +23,7 @@ public class HomePage extends BasePage{
 
     @FindBy(css = "#mui-1") public WebElement searchBox_Loc;
 
-    @FindBy(xpath = "//*[contains(@class, 'MuiBadge-root')]//*[contains(@class, 'MuiTypography-root MuiTypography-body3')]") public List<WebElement> categoriesList_Loc;
+    @FindBy(xpath = "//*[contains(@class, 'MuiButtonBase-root MuiButton-root')]//*[contains(@class, 'MuiTypography-root MuiTypography-body3')]") public List<WebElement> categoriesList_Loc;
 
     @FindBy(xpath = "//*[@class='MuiTypography-root MuiTypography-h3 muirtl-14hb52n']") public List<WebElement> footerMenuNames_Loc;
 
@@ -45,8 +45,9 @@ public class HomePage extends BasePage{
 
     public void clickLogin(){
         BrowserUtils.waitForClickablility(loginBtn_Loc,5);
+        BrowserUtils.waitFor(2);
         loginBtn_Loc.click();
-        BrowserUtils.waitFor(1);
+        BrowserUtils.waitFor(2);
     }
 
     public void clickHamburgerMenu(){
