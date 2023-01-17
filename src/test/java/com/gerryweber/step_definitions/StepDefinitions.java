@@ -98,6 +98,11 @@ public class StepDefinitions {
         Assert.assertEquals(message.trim(), BasePage.verifyMessage(message));
     }
 
+    @When("The user verifies {string} messagee")
+    public void the_user_verifies_messagee(String message) {
+        Assert.assertEquals(message.trim(), BasePage.verifyMessagee(message));
+    }
+
     @When("The user enters invalid informations")
     public void the_user_enters_invalid_informations() {
         checkoutPage.invalidCard();
@@ -188,8 +193,53 @@ public class StepDefinitions {
         homePage.checkCategories(categorieList);
     }
 
+    @And("The user clicks {string} and verifies {string}")
+    public void theUserClicksAndVerifies(String button, String title) {
+        homePage.checkPageTitle(button,title);
+    }
+
     @And("The user verifies footer menu names")
     public void theUserVerifiesFooterMenuNames(List<String> footerMenuNames) {
         homePage.checkFooterNames(footerMenuNames);
+    }
+
+    @And("The user clicks Instagram button")
+    public void theUserClicksInstagramButton() {
+        homePage.clickInstagramButton();
+    }
+
+    @And("The user verifies redirected to Instagram page")
+    public void theUserVerifiesRedirectedToInstagramPage() {
+        homePage.verifyInstagramPage();
+    }
+
+    @And("The user clicks Facebook button")
+    public void theUserClicksFacebookButton() {
+        homePage.clickFacebookButton();
+    }
+
+    @And("The user verifies redirected to Facebook page")
+    public void theUserVerifiesRedirectedToFacebookPage() {
+        homePage.verifyFacebookPage();
+    }
+
+    @And("The user clicks submit button")
+    public void theUserClicksSubmitButton() {
+        homePage.clickNewsLetterButton();
+    }
+
+    @And("The user clicks Confirm Privacy Policy button")
+    public void theUserClicksConfirmPrivacyPolicyButton() {
+        homePage.clickConfirmButton();
+    }
+
+    @And("The user enters invalid emails")
+    public void theUserEntersInvalidEmails() {
+        homePage.sendInvalidEmail();
+    }
+
+    @And("The user enters valid emails")
+    public void theUserEntersValidEmails() {
+        homePage.sendValidEmail();
     }
 }
