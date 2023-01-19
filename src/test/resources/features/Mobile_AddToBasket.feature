@@ -1,6 +1,6 @@
 Feature: Mobile | Add to basket
 
- @smoke
+ @smoke1
   Scenario:Add to basket and delete product from basket
 
   Given The user visits GerryWeber homepage
